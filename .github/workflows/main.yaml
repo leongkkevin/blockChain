@@ -1,0 +1,49 @@
+name: Build, Run and Test
+
+on: [push]
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Create Build Environment
+        run: cmake -E make_directory ${{runner.workspace}}/${{github.event.repository.name}}/build
+
+      - name: Configure CMake
+        shell: bash
+        working-directory: ${{runner.workspace}}/${{github.event.repository.name}}/build
+        run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+
+      - name: Build
+        working-directory: ${{runner.workspace}}/${{github.event.repository.name}}/build
+        run: cmake --build . --config $BUILD_TYPE
+
+      - name: Test
+        working-directory: ${{runner.workspace}}/${{github.event.repository.name}}/build
+        run: ./program5_test
+
+      - name: Run
+        working-directory: ${{runner.workspace}}/${{github.event.repository.name}}/build
+        run: ./program5 ${{runner.workspace}}/${{ github.event.repository.name }}/transactions.txt
+
+      - name: Archive Peer 1
+        uses: actions/upload-artifact@v1
+        with:
+          name: Peer1
+          path: peer1.csv
+      - name: Archive Peer 2
+        uses: actions/upload-artifact@v1
+        with:
+          name: Peer2
+          path: peer2.csv
+      - name: Archive Peer 3
+        uses: actions/upload-artifact@v1
+        with:
+          name: Peer3
+          path: peer3.csv

@@ -1,0 +1,6 @@
+prompt.md
+prompt.pdf
+cmake-build-debug
+*.out
+*.exe
+images
