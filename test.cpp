@@ -67,12 +67,12 @@ int main() {
     list.push_back(1);
     list.push_back(2);
     LinkedList<int> copyList(list);
-//    cout << "Original List:";
-//    list.printList();
-//    cout << "Copy constructor:";
-//    copyList.printList();
-//    assert(list.getPayloadAtIndex(0) == copyList.getPayloadAtIndex(0));
-//    cout << "Copy Constructor Works" << endl << endl;
+    cout << "Original List:";
+    list.printList();
+    cout << "Copy constructor:";
+    copyList.printList();
+    assert(list.getPayloadAtIndex(0) == copyList.getPayloadAtIndex(0));
+    cout << "Copy Constructor Works" << endl << endl;
 
 //    //Test 8 = Copy Assignment Operator
 //    LinkedList<int> copyAssOpList;

@@ -41,7 +41,8 @@ public:
 
         Node<Type>* temp = copy.head;
         for(int i = 0; i < copy.size; i++){
-           // Node<Type>* newNode = new Node<Type>(temp->payload);
+            auto tempPayload = temp->payload;
+            Node<Type>* newNode = new Node<Type>(tempPayload);
             push_back(temp->payload);
             temp = temp->next;
         }
