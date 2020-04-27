@@ -40,7 +40,7 @@ public:
         this->size = 0;
 
         Node<Type>* temp = copy.head;
-        for(int i = 0; i < copy.size; i++){
+        for(int i = 0; i < copy.size - 1; i++){
             auto tempPayload = temp->payload;
             Node<Type>* newNode = new Node<Type>(tempPayload);
             push_back(temp->payload);
