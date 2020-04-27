@@ -11,6 +11,12 @@ CreditCard::CreditCard(){
 }
 
 void CreditCard::display() {
+    Transaction().display();
+
+    cout << "Payment Method: Credit Card" << endl;
+    cout << "Card Number: " << cardNumber << endl;
+    cout << "Exp. Date: " << expirationDate << endl;
+    cout << "CVV: " << cvv << endl << endl;
 
 }
 

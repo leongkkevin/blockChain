@@ -17,7 +17,8 @@ Transaction::Transaction() {
 }
 
 void Transaction::display() {
-
+    cout << "Transaction #" << id << " " << sender << " sent $" << amount << " to " << receiver << endl;
+    cout << endl;
 }
 
 void Transaction::save(ofstream file) {

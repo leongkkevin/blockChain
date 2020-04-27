@@ -5,7 +5,7 @@
 #ifndef PROGRAM5_CASH_H
 #define PROGRAM5_CASH_H
 
-
+#include <iostream>
 #include "Transaction.h"
 
 class Cash: public Transaction {

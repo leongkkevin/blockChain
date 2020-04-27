@@ -10,6 +10,11 @@ Cash::Cash(){
 }
 
 void Cash::display() {
+    Transaction().display();
+
+    cout << "Payment Method: Cash" << endl;
+    cout << "Amount Paid: " << totalPaid << endl;
+    cout << "Change Given: " << changeDue << endl << endl;
 }
 
 void Cash::save(ofstream file) {

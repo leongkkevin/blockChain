@@ -10,7 +10,11 @@ Check::Check(){
 }
 
 void Check::display() {
+    Transaction().display();
 
+    cout << "Payment Method: Check" << endl;
+    cout << "Routing Number: " << routingNumber << endl;
+    cout << "Account Number: " << accountNumber << endl << endl;
 }
 
 void Check::save(ofstream file) {

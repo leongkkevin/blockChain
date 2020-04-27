@@ -35,21 +35,21 @@ public:
     }
 
     LinkedList(const LinkedList& copy){
-//        this->head = copy.head;
-//        this->tail = copy.tail;
+        this->head = nullptr;
+        this->tail = nullptr;
         this->size = 0;
 
         Node<Type>* temp = copy.head;
-        for(int i = 0; i < copy.size - 1; i++){
-            auto tempPayload = temp->payload;
-            Node<Type>* newNode = new Node<Type>(tempPayload);
-            push_back(temp->payload);
-            temp = temp->next;
+        for(int i = 0; i < copy.size; i++){
+           //Node<Type>* newNode = new Node<Type>(temp);
+           push_back(temp->payload);
+           temp = temp->next;
         }
     }
 
    LinkedList &operator=(const LinkedList & copy) {
         if (this != &copy) {
+            this->head = this->tail = nullptr;
             this->size = 0;
 
             Node<Type>* temp = copy.head;

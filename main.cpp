@@ -2,6 +2,9 @@
 #include <fstream>
 
 #include "Transaction.h"
+#include "Cash.h"
+#include "Check.h"
+#include "CreditCard.h"
 
 #include "Node.h"
 #include "LinkedList.h"
@@ -9,6 +12,7 @@
 using namespace std;
 
 int main(int argc, char* argv[]) {
+    
 
     if (argc != 2) {
         cout << "Invalid number of arguments. Correct usage: ./a.out <filename>" << endl;

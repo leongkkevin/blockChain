@@ -67,6 +67,7 @@ int main() {
     list.push_back(1);
     list.push_back(2);
     LinkedList<int> copyList(list);
+    copyList.remove(1);
     cout << "Original List:";
     list.printList();
     cout << "Copy constructor:";
@@ -74,7 +75,7 @@ int main() {
     assert(list.getPayloadAtIndex(0) == copyList.getPayloadAtIndex(0));
     cout << "Copy Constructor Works" << endl << endl;
 
-//    //Test 8 = Copy Assignment Operator
+    //Test 8 = Copy Assignment Operator
 //    LinkedList<int> copyAssOpList;
 //    copyAssOpList = copyList;
 //    cout << "Original List:";
