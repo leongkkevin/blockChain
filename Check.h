@@ -6,13 +6,17 @@
 #define PROGRAM5_CHECK_H
 
 #include <iostream>
+#include <sstream>
+
 #include "Transaction.h"
 
 class Check: public Transaction {
 public:
     Check();
+    Check(string info);
+
     void display() override;
-    void save(ofstream file) override;
+    void save(ofstream file);
 
 private:
     string routingNumber;

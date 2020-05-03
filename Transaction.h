@@ -15,7 +15,24 @@ class Transaction {
 public:
     Transaction();
     virtual void display();
-    virtual void save(ofstream file);
+    virtual void save(ofstream &file);
+
+
+    int getId() const;
+
+    void setId(int id);
+
+    int getSender() const;
+
+    void setSender(int sender);
+
+    int getReceiver() const;
+
+    void setReceiver(int receiver);
+
+    double getAmount() const;
+
+    void setAmount(double amount);
 
 private:
     int id;

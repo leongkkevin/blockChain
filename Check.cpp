@@ -9,8 +9,33 @@ Check::Check(){
     this->routingNumber = routingNumber;
 }
 
+Check::Check(string info) {
+    stringstream ss;
+    ss << info;
+
+    string specInfo;
+
+    getline(ss, specInfo, ',');
+    int sender = stoi(specInfo);
+    setSender(sender);
+
+    getline(ss, specInfo, ',');
+    int receiver = stoi(specInfo);
+    setReceiver(receiver);
+
+    getline(ss, specInfo, ',');
+    int amount = stoi(specInfo);
+    setAmount(amount);
+
+    getline(ss, specInfo, ',');
+    this->routingNumber = specInfo;
+
+    getline(ss, specInfo, ',');
+    this->accountNumber = specInfo;
+}
+
 void Check::display() {
-    Transaction().display();
+    Transaction::display();
 
     cout << "Payment Method: Check" << endl;
     cout << "Routing Number: " << routingNumber << endl;
@@ -20,3 +45,4 @@ void Check::display() {
 void Check::save(ofstream file) {
 
 }
+

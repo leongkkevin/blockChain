@@ -9,8 +9,35 @@ Cash::Cash(){
     this->changeDue = changeDue;
 }
 
+Cash::Cash(string info) {
+    stringstream ss;
+    ss << info;
+
+    string specInfo;
+
+    getline(ss, specInfo, ',');
+    int sender = stoi(specInfo);
+    setSender(sender);
+
+    getline(ss, specInfo, ',');
+    int receiver = stoi(specInfo);
+    setReceiver(receiver);
+
+    getline(ss, specInfo, ',');
+    int amount = stoi(specInfo);
+    setAmount(amount);
+
+    getline(ss, specInfo, ',');
+    int totalPaid = stoi(specInfo);
+    this->totalPaid = totalPaid;
+
+    getline(ss, specInfo, ',');
+    int changeDue = stoi(specInfo);
+    this->changeDue = changeDue;
+}
+
 void Cash::display() {
-    Transaction().display();
+    Transaction::display();
 
     cout << "Payment Method: Cash" << endl;
     cout << "Amount Paid: " << totalPaid << endl;

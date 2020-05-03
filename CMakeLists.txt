@@ -9,7 +9,7 @@ add_executable(program5 main.cpp
         Check.cpp Check.h
         Cash.cpp Cash.h
         Node.cpp Node.h
-        LinkedList.cpp LinkedList.h)
+        LinkedList.cpp LinkedList.h Peer.cpp Peer.h Network.cpp Network.h)
 add_executable(program5_test test.cpp
         Transaction.cpp Transaction.h
         CreditCard.cpp CreditCard.h
