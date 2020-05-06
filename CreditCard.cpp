@@ -16,6 +16,8 @@ CreditCard::CreditCard(string info) {
 
     string specInfo;
 
+    setId(rand());
+
     getline(ss, specInfo, ',');
     int sender = stoi(specInfo);
     setSender(sender);

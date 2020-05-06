@@ -7,9 +7,10 @@
 using namespace std;
 
 Transaction::Transaction() {
-    srand((unsigned) time(0));
+    //srand(time(nullptr));
+    int randNum = rand();
 
-    this->id = rand();
+    this->id = randNum;
     this->sender = 0;
     this->receiver = 0;
 

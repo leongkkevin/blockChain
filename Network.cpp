@@ -42,6 +42,7 @@ void Network::processTransactions(std::ifstream &inFile) {
     stringstream ss;
     ss << bigString;
 
+    srand(time(0));
     //Sorting
     string info;
     for(int i = 0; i < ss.tellp(); i++){

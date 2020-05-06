@@ -7,6 +7,8 @@
 
 #include <iostream>
 #include <sstream>
+#include <random>
+
 #include "Transaction.h"
 
 class CreditCard: public Transaction {
