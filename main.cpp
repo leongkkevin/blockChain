@@ -33,7 +33,6 @@ int main(int argc, char* argv[]) {
 
     Network network;
     network.processTransactions(inFile);
-    //Paste the Network Process Transaction here if you fuck up
 
     network.display();
     network.save();
